@@ -1,0 +1,26 @@
+Package: ckmCRA
+Title: CKM Regression Accessibility and Multi-Organ Aging Calculator
+Version: 0.1.0
+Authors@R: 
+    person("Your", "Zhengyang Zhu", email = "1149221197@qq.com",
+           role = c("aut", "cre"))
+Description: A toolkit for calculating CRA (CKM Regression Accessibility)
+    scores, predicting organ-specific biological ages, and estimating
+    all-cause and cardiovascular mortality risk in adults with
+    cardiometabolic-kidney (CKM) syndrome.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Depends: R (>= 4.1.0)
+Imports:
+    dplyr,
+    survival,
+    gbm,
+    ggplot2
+Suggests:
+    testthat (>= 3.0.0),
+    shiny,
+    bslib,
+    DT
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.1.0
