@@ -238,7 +238,13 @@ ui <- page_navbar(
   ),
   
   nav_spacer(),
-  nav_item(tags$a(href = "https://github.com/", icon("github"), " GitHub"))
+  nav_item(
+    tags$a(
+      href   = "https://github.com/zhuzhengyang517/ckmCRA",
+      target = "_blank",
+      icon("github"), " Source Code"
+    )
+  )
 )
 
 # ============================================
