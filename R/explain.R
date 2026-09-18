@@ -35,7 +35,7 @@ explain_organ_age <- function(data, organ = c("Heart", "Kidney", "MetabInf")) {
   newdata_df <- as.data.frame(X_final, stringsAsFactors = FALSE)
   colnames(newdata_df) <- model$best_vars
 
-  pred_base <- predict(model$best_fit, newdata = newdata_df,
+  pred_base <- gbm::predict.gbm(model$best_fit, newdata = newdata_df,
                        n.trees = model$best_fit$n.trees)
 
   # 留一扰动
@@ -46,7 +46,7 @@ explain_organ_age <- function(data, organ = c("Heart", "Kidney", "MetabInf")) {
     X_pert[, v] <- 0
     pert_df <- as.data.frame(X_pert, stringsAsFactors = FALSE)
     colnames(pert_df) <- model$best_vars
-    pred_pert <- predict(model$best_fit, newdata = pert_df,
+    pred_pert <- gbm::predict.gbm(model$best_fit, newdata = pert_df,
                          n.trees = model$best_fit$n.trees)
     contribs[v] <- pred_base - pred_pert
   }

@@ -35,7 +35,7 @@ predict_organ_age <- function(data, organ = c("Heart", "Kidney", "MetabInf")) {
   colnames(newdata_df) <- model$best_vars
   rownames(newdata_df) <- NULL
 
-  pred <- predict(model$best_fit,
+  pred <- gbm::predict.gbm(model$best_fit,
                   newdata = newdata_df,
                   n.trees = model$best_fit$n.trees)
 
